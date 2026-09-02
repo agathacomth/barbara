@@ -1,0 +1,95 @@
+SITE BÁRBARA GERMANI — v2 (identidade oficial da marca)
+====================================================================
+
+ARQUIVOS
+--------------------------------------------------------------------
+index.html ....................... Link da bio (página inicial)
+mentoria.html .................... Mentoria Identidade Raiz™
+livro.html ....................... A Origem dos Seus Resultados
+politica-de-privacidade.html ..... Política de Privacidade (LGPD)
+
+assets/style.css ................. Todo o visual do site
+assets/site.js ................... Animação de entrada das seções
+assets/fonts.css + assets/fonts/ . Fontes auto-hospedadas
+assets/elementos.html ............ Sprite dos elementos da marca (referência)
+img/ ............................. Logo, fotos e capa do livro
+
+
+IDENTIDADE VISUAL APLICADA (do Manual de Marca)
+--------------------------------------------------------------------
+Cores — estão no topo do style.css, em :root. Mudar ali muda tudo.
+
+  Off White ............ #E9E8E9   fundos claros, respiro
+  Azul Profundo Noturno  #001F54   fundos densos, títulos
+  Rosa Magenta ......... #B42150   grifos, botões, pontos emocionais
+  Azul Brilhante ....... #0552AC   CTAs secundários, destaques
+
+Tipografia — o manual usa TAN Aegean e Mont, que são fontes pagas e
+não podem ser servidas na web sem licença. Usei as equivalentes livres
+mais próximas, já auto-hospedadas:
+
+  TAN Aegean  →  Playfair Display   (títulos e frases de impacto)
+  Mont        →  Montserrat         (corpo de texto)
+  Cormorant Garamond                (assinatura e logotipo)
+
+  Se a Bárbara tiver a licença web das originais, é só trocar os
+  arquivos em assets/fonts/ e os nomes em assets/fonts.css.
+
+Logo — extraí do manual em duas versões, com fundo transparente:
+  img/logo-bg.png / logo-lockup.png ........ para fundos claros
+  img/logo-bg-claro.png / ...-claro.png .... para fundos escuros
+  img/favicon.png .......................... ícone da aba
+
+Elementos gráficos — os símbolos OFICIAIS (boca, onda sonora, ramo e
+porta) estão em img/simbolo-*.png. Eles entram como máscara CSS, então
+assumem qualquer cor da paleta com uma linha de CSS — aparecem em
+magenta, azul-claro e branco conforme o fundo da seção. Ficam no
+ornamento de cada seção, nos marcadores de lista e na faixa animada.
+
+
+AS 2 COISAS QUE PRECISAM SER PREENCHIDAS
+--------------------------------------------------------------------
+
+1) LINK DO CHECKOUT DA MENTORIA
+   Arquivo: mentoria.html — no começo, procure por CHECKOUT_URL.
+
+       var CHECKOUT_URL = "";
+
+   Cole a URL entre as aspas. Os 6 botões de inscrição da página
+   passam a apontar para lá. Enquanto estiver vazio, eles abrem o
+   WhatsApp da Bárbara com uma mensagem pronta — nenhum botão morto.
+
+2) VÍDEO DE APRESENTAÇÃO DA MENTORIA
+   Arquivo: mentoria.html — procure por "ESPAÇO DO VÍDEO".
+   Troque a <div class="video-caixa"> pelo iframe do YouTube/Vimeo.
+   Ele já está dentro do mockup de notebook.
+
+
+O QUE JÁ ESTÁ FUNCIONANDO
+--------------------------------------------------------------------
+✓ WhatsApp +1 (754) 707-9772 com mensagens diferentes por contexto
+✓ Link da Amazon do livro + capa oficial
+✓ Instagram, LinkedIn e a entrevista d'A Gazeta Popular
+✓ Botão de compartilhar o livro no WhatsApp (com aviso do navegador)
+✓ Depoimentos reais transcritos das conversas
+✓ Vídeo oficial do livro girando no topo da livro.html
+✓ Arquitetura interativa na mentoria: passe o mouse (ou toque) em
+  Identidade, Crenças, Padrões, Escolhas, Comportamentos e Resultados
+  e aparece o movimento do método que trabalha cada etapa
+✓ Responsivo, acessível e pronto para impressão
+✓ Open Graph configurado para link no WhatsApp e Instagram
+
+
+COMO PUBLICAR
+--------------------------------------------------------------------
+É um site estático: suba a pasta inteira, do jeito que está.
+  • Netlify -> netlify.com/drop (arraste a pasta)
+  • Vercel, GitHub Pages, ou qualquer hospedagem via FTP
+A index.html é que abre no domínio principal.
+Para testar no computador, dois cliques em index.html.
+
+Sem dependências externas: nenhuma chamada a CDN ou Google Fonts.
+O site funciona até offline.
+
+--------------------------------------------------------------------
+Feito por AG Studio · setembro de 2026
