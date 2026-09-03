@@ -72,7 +72,9 @@ O QUE JÁ ESTÁ FUNCIONANDO
 ✓ Instagram, LinkedIn e a entrevista d'A Gazeta Popular
 ✓ Botão de compartilhar o livro no WhatsApp (com aviso do navegador)
 ✓ Depoimentos reais transcritos das conversas
-✓ Vídeo oficial do livro girando no topo da livro.html
+✓ GIF oficial do livro girando no topo da livro.html
+  (o mesmo movimento em vídeo, bem mais leve, está em
+   img/livro-gira.mp4 — é só trocar a tag se preferir)
 ✓ Arquitetura interativa na mentoria: passe o mouse (ou toque) em
   Identidade, Crenças, Padrões, Escolhas, Comportamentos e Resultados
   e aparece o movimento do método que trabalha cada etapa
