@@ -50,11 +50,11 @@
 <main>
 
 <!-- ═══════════ HERO ═══════════ -->
-<section class="hero bg-gradiente">
+<section class="hero hero--recorte bg-gradiente">
   <span class="marca-dagua" aria-hidden="true">Raiz</span>
   <div class="wrap" style="position:relative;z-index:1;">
     <div class="hero__grid">
-      <div>
+      <div class="hero__coluna-texto">
         <span class="eyebrow">Mentoria Identidade Raiz™</span>
         <h1>Você não se perdeu.<br><em style="color:#fff;font-style:italic;">Você aprendeu a sobreviver.</em></h1>
         <p class="lead" style="max-width:31rem;">
@@ -67,14 +67,16 @@
         </div>
       </div>
       <div>
-        <img class="hero__foto" src="./img/barbara-palco.jpg" alt="Bárbara Germani conduzindo um encontro da Identidade Raiz" fetchpriority="high">
+        <!-- Foto recortada (fundo removido). A base atravessa para a dobra
+             seguinte; a sombra do CSS (.hero__recorte) dá a profundidade. -->
+        <img class="hero__recorte" src="./img/barbara-recorte.webp" alt="Bárbara Germani" width="900" height="1509" fetchpriority="high">
       </div>
     </div>
   </div>
 </section>
 
 <!-- ═══════════ FICHA RÁPIDA ═══════════ -->
-<section class="bg-claro secao-curta">
+<section class="bg-claro secao-curta secao-recebe-recorte">
   <div class="wrap">
     <div class="ficha reveal">
       <div>
@@ -520,7 +522,7 @@
       </ul>
 
       <a class="btn btn--magenta btn--gg btn--bloco js-checkout" href="#investimento">Garantir minha vaga</a>
-      <p class="oferta__aviso">Dúvida antes de decidir? <a href="https://wa.me/17547079772?text=Oi%2C%20B%C3%A1rbara!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Mentoria%20Identidade%20Raiz." target="_blank" rel="noopener">Fale comigo no WhatsApp.</a></p>
+      <p class="oferta__aviso">Dúvida antes de decidir? <a href="https://wa.me/17542018654?text=Oi%2C%20B%C3%A1rbara!%20Tenho%20uma%20d%C3%BAvida%20sobre%20a%20Mentoria%20Identidade%20Raiz." target="_blank" rel="noopener">Fale comigo no WhatsApp.</a></p>
     </div>
 
     <div class="citacao reveal" style="margin-top:3.2rem;">
@@ -590,7 +592,7 @@
       <a href="./mentoria.html">Mentoria Identidade Raiz</a>
       <a href="./livro.html">O livro</a>
       <a href="https://www.instagram.com/barbaragermanii/" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://wa.me/17547079772" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://wa.me/17542018654" target="_blank" rel="noopener">WhatsApp</a>
       <a href="./politica-de-privacidade.html">Política de Privacidade</a>
     </nav>
     <small>
@@ -609,7 +611,7 @@
 <script>
   document.querySelectorAll('.ano').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   (function () {
-    var whats = 'https://wa.me/17547079772?text=' + encodeURIComponent('Oi, Bárbara! Quero garantir minha vaga na Mentoria Identidade Raiz.');
+    var whats = 'https://wa.me/17542018654?text=' + encodeURIComponent('Oi, Bárbara! Quero garantir minha vaga na Mentoria Identidade Raiz.');
     var destino = (typeof CHECKOUT_URL === 'string' && CHECKOUT_URL.trim()) ? CHECKOUT_URL.trim() : whats;
     document.querySelectorAll('.js-checkout').forEach(function (a) {
       a.setAttribute('href', destino);

@@ -409,6 +409,36 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.05fr .95fr; } }
 .hero__foto { border-radius: var(--r-lg); object-fit: cover; width: 100%; aspect-ratio: 4 / 5; box-shadow: var(--sombra-alt); }
 
+/* ── Hero com foto recortada que atravessa para a dobra seguinte ── */
+.hero--recorte {
+  padding-bottom: 0;
+  /* corta só na horizontal para o recorte poder vazar para baixo */
+  overflow-x: clip;
+  overflow-y: visible;
+  z-index: 2;
+}
+.hero--recorte .hero__grid { align-items: end; }
+.hero--recorte .hero__coluna-texto { padding-bottom: 0; }
+.hero__recorte {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 296px;
+  height: auto;
+  margin: 0 auto -66px;
+  /* sombra de contato embaixo + halo frio para destacar do azul */
+  filter: drop-shadow(0 16px 22px rgba(0, 8, 30, .48))
+          drop-shadow(0 4px 8px rgba(0, 8, 30, .30))
+          drop-shadow(0 0 24px rgba(143, 176, 222, .22));
+}
+/* a dobra seguinte abre espaço para as pernas que entram nela */
+.secao-recebe-recorte { padding-top: clamp(96px, 12vw, 150px); }
+@media (min-width: 900px) {
+  .hero--recorte .hero__grid { grid-template-columns: 1.1fr .9fr; }
+  .hero--recorte .hero__coluna-texto { padding-bottom: clamp(52px, 7vw, 92px); }
+  .hero__recorte { max-width: 430px; margin-bottom: -132px; }
+}
+
 .marca-dagua {
   position: absolute; font-family: var(--display);
   font-size: clamp(8rem, 22vw, 19rem); line-height: .8;
@@ -733,6 +763,15 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 }
 .moldura-produto video, .moldura-produto img {
   width: 100%; display: block; aspect-ratio: 1080 / 1350; object-fit: cover;
+}
+
+/* Livro girando com fundo transparente — sem moldura, solto sobre a seção */
+.livro-gira { max-width: 440px; margin-inline: auto; }
+.livro-gira img {
+  width: 100%; height: auto; display: block;
+  /* halo claro para o livro não sumir no azul + sombra de apoio embaixo */
+  filter: drop-shadow(0 0 26px rgba(143, 176, 222, .40))
+          drop-shadow(0 26px 40px rgba(0, 8, 30, .55));
 }
 
 .capa-livro {

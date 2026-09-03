@@ -67,14 +67,25 @@ AS 2 COISAS QUE PRECISAM SER PREENCHIDAS
 
 O QUE JÁ ESTÁ FUNCIONANDO
 --------------------------------------------------------------------
-✓ WhatsApp +1 (754) 707-9772 com mensagens diferentes por contexto
+✓ WhatsApp +1 (754) 201-8654 com mensagens diferentes por contexto
 ✓ Link da Amazon do livro + capa oficial
 ✓ Instagram, LinkedIn e a entrevista d'A Gazeta Popular
 ✓ Botão de compartilhar o livro no WhatsApp (com aviso do navegador)
 ✓ Depoimentos reais transcritos das conversas
-✓ GIF oficial do livro girando no topo da livro.html
-  (o mesmo movimento em vídeo, bem mais leve, está em
-   img/livro-gira.mp4 — é só trocar a tag se preferir)
+✓ GIF oficial do livro girando no topo da livro.html — feito a partir
+  do seu "gir capa do livro.gif", reduzido de 9,2 MB para 851 KB
+  (520px, 16 fps). O fundo é transparente: o livro gira solto sobre a
+  seção, sem moldura e sem caixa cinza atrás
+✓ Foto recortada no topo da mentoria: img/barbara-recorte.webp — fundo
+  removido, a base atravessa para a dobra da ficha rápida. A sombra e o
+  halo são de CSS (.hero__recorte no style.css), então dá para ajustar a
+  profundidade sem mexer na imagem. O arquivo é .webp por causa da
+  transparência com qualidade de foto (o PNG equivalente pesaria 1,4 MB
+  contra 138 KB) — formato aberto, roda em todos os navegadores atuais
+✓ Fotos novas da Bárbara aplicadas em todo o site (hero, cartões da bio,
+  "quem sou eu", hero da mentoria, "quem conduz" e imagem de
+  compartilhamento). Continuam as originais só a foto de fundo da faixa
+  "Você sabe racionalmente..." e a do encontro na dobra da plataforma
 ✓ Arquitetura interativa na mentoria: passe o mouse (ou toque) em
   Identidade, Crenças, Padrões, Escolhas, Comportamentos e Resultados
   e aparece o movimento do método que trabalha cada etapa
