@@ -417,6 +417,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
    ========================================================================== */
 .hero { padding: clamp(56px, 8vw, 104px) 0 clamp(52px, 7vw, 92px); }
 .hero__grid { display: grid; gap: clamp(32px, 4vw, 56px); align-items: center; }
+.hero__grid > * { min-width: 0; }
 @media (min-width: 900px) { .hero__grid { grid-template-columns: 1.05fr .95fr; } }
 .hero__foto { border-radius: var(--r-lg); object-fit: cover; width: 100%; aspect-ratio: 4 / 5; box-shadow: var(--sombra-alt); }
 
@@ -630,8 +631,8 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
    documento: empurra o conteúdo seguinte em vez de flutuar por cima, então
    nunca é cortada pela borda da seção nem sai da tela. */
 @media (max-width: 760px) {
-  .fluxo { display: block; margin-inline: auto; max-width: 430px; }
-  .fluxo i { display: none; }
+  .fluxo--interativo { display: block; margin-inline: auto; max-width: 430px; }
+  .fluxo--interativo i { display: none; }
   .fluxo__item { display: block; margin-bottom: 8px; }
   .fluxo__botao {
     display: block; width: 100%; text-align: left; white-space: normal;
@@ -1277,4 +1278,110 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   .hero--recorte .hero__coluna-texto > h1 { font-size: clamp(2.1rem, 4.6vw, 2.9rem); }
   .hero__recorte { max-width: 230px; }
   .hero__recorte::after { height: 52px; }
+}
+
+/* ==========================================================================
+   CELULAR: blocos longos viram carrossel de arrastar
+   Um só mecanismo, em CSS puro (scroll-snap). Nada de biblioteca.
+   No desktop tudo continua em grade, como estava.
+   ========================================================================== */
+@media (max-width: 899px) {
+
+  /* respiro entre seções menor: 17 seções × 2 sobravam quase 2000px */
+  section { padding: 44px 0; }
+  .secao-curta { padding: 30px 0; }
+  .cab { margin-bottom: 1.6rem; }
+
+  /* ---- o carrossel ---- */
+  .grade--3,
+  .duas-listas,
+  .movs,
+  .entregas-grade,
+  .depoimentos:not(.depoimentos--bio),
+  .mosaico,
+  .duo,
+  .trajetoria {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    grid-template-columns: none;
+    grid-template-areas: none;
+    gap: 12px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    padding: 2px 16px 10px;
+    margin-inline: -16px;              /* sangra até a borda da tela */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .grade--3::-webkit-scrollbar,
+  .duas-listas::-webkit-scrollbar,
+  .movs::-webkit-scrollbar,
+  .entregas-grade::-webkit-scrollbar,
+  .depoimentos:not(.depoimentos--bio)::-webkit-scrollbar,
+  .mosaico::-webkit-scrollbar,
+  .duo::-webkit-scrollbar,
+  .trajetoria::-webkit-scrollbar { display: none; }
+
+  .grade--3 > *, .duas-listas > *, .movs > *, .entregas-grade > *,
+  .depoimentos:not(.depoimentos--bio) > *, .mosaico > *, .duo > *, .trajetoria > * {
+    scroll-snap-align: start;
+    margin: 0;
+    min-width: 0;
+  }
+
+  /* fotos no carrossel ganham altura fixa, senão cada uma tem a sua */
+  .mosaico > figure, .duo > figure { grid-area: auto; aspect-ratio: 4 / 3; height: auto; }
+  .mosaico img, .duo img { height: 100%; }
+
+  /* a linha do tempo vira cartão dentro do carrossel */
+  .trajetoria { grid-auto-columns: 88%; }
+  .etapa-tempo {
+    display: block;
+    padding: 20px 20px 22px;
+    border: 1px solid rgba(167,174,188,.2);
+    border-radius: var(--r-lg);
+    background: rgba(233,232,233,.04);
+  }
+  .etapa-tempo:last-child { border-bottom: 1px solid rgba(167,174,188,.2); }
+  .etapa-tempo__quando { display: block; margin-bottom: .5rem; font-size: .95rem; }
+
+  /* ---- blocos curtos: 2 colunas em vez de carrossel ---- */
+  .ficha { grid-template-columns: 1fr 1fr; }
+  .ficha > div { padding: 18px 16px; }
+  .ficha b { font-size: .98rem; }
+  .ficha span { font-size: .74rem; }
+  .etapas { grid-template-columns: 1fr 1fr; }
+  .numeros > div { padding: 18px 12px; }
+
+  /* ---- quem conduz: foto menor (só na mentoria; no livro a foto do
+         produto precisa de tamanho para ser lida) ---- */
+  .tema-noite .hero__foto { max-width: 190px; margin-inline: auto; }
+  .hero__foto { max-width: 320px; margin-inline: auto; }
+}
+
+/* ---- trilho de pontos do carrossel (montado pelo site.js) ---- */
+.carrossel-pontos { display: none; }
+@media (max-width: 899px) {
+  .carrossel-pontos {
+    display: flex; justify-content: center; gap: 7px;
+    margin: -2px 0 0; padding: 0; list-style: none;
+  }
+  .carrossel-pontos li {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(167,174,188,.32);
+    transition: background .25s ease, transform .25s ease;
+  }
+  .carrossel-pontos li[data-ativo] { background: var(--magenta-claro); transform: scale(1.5); }
+  .bg-papel .carrossel-pontos li { background: rgba(30,44,70,.22); }
+  .bg-papel .carrossel-pontos li[data-ativo] { background: var(--magenta); }
+  .carrossel-dica {
+    display: block; text-align: center;
+    margin-top: .7rem;
+    font-size: .62rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+    color: rgba(167,174,188,.5);
+  }
+  .bg-papel .carrossel-dica { color: var(--texto-suave); }
 }

@@ -72,6 +72,28 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
 • No tema noite o azul brilhante do botão "Quero mudar isso" foi rebaixado:
   com o magenta tão escuro, ele passou a gritar mais que o CTA principal
   e invertia a hierarquia da página.
+• CELULAR OTIMIZADO: a página caiu de 21.300px para 13.100px de altura,
+  quase 40% mais curta. Os blocos longos viraram CARROSSEL DE ARRASTAR:
+  cartões do mecanismo, os 5 movimentos, entregáveis, é/não é, depoimentos,
+  os dois mosaicos de fotos, o par do podcast e a linha do tempo. O
+  deslizar é do próprio navegador (scroll-snap em CSS, sem biblioteca
+  nenhuma); o site.js só desenha os pontinhos e a dica "arraste para o
+  lado", e some com ela no primeiro arrasto. Fora do celular tudo volta a
+  ser grade, igual a antes.
+  Para tirar um bloco do carrossel é só remover a classe dele da lista no
+  bloco "CELULAR: blocos longos viram carrossel", no style.css, e da
+  variável SELETOR no site.js.
+  A ficha rápida e as etapas do "como funciona" viraram 2 colunas em vez
+  de carrossel, porque são curtas. O respiro entre seções caiu de 56px
+  para 44px no celular.
+• BUG CORRIGIDO na página do livro no celular: a dobra "Sobre o livro"
+  saía da tela e o texto ficava cortado na direita. Causa: um filho de
+  grade com conteúdo largo (a faixa de chips) esticava a coluna, porque
+  item de grade nasce com min-width:auto e não encolhe. Duas correções:
+  .hero__grid > * ganhou min-width:0, e a sanfona do celular passou a
+  valer só para .fluxo--interativo, que é o da mentoria, deixando a faixa
+  decorativa do livro em paz. A foto do livro nessa dobra também estava
+  pequena demais no celular (190px) e foi para 320px.
 • No celular e no tablet o topo da mentoria virou composição lado a lado:
   a foto fica pequena, à direita do olho e do título, e o texto de apoio e
   os botões ocupam a largura inteira. Ela só atravessa para a dobra
