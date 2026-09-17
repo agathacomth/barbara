@@ -21,9 +21,9 @@ Cores — estão no topo do style.css, em :root. Mudar ali muda tudo.
 
   Off White ............ #E9E8E9   fundos claros, respiro
   Azul Profundo Noturno  #001F54   fundos densos, títulos
-  Rosa Magenta ......... #8E1A3F   grifos, botões, pontos emocionais
-                                   (o manual traz #B42150; escurecido a
-                                   pedido da Ágatha, em todo o site)
+  Rosa Magenta ......... #6D1330   grifos, botões, pontos emocionais
+                                   (o manual traz #B42150; escurecido em
+                                   dois passos a pedido da Ágatha)
   Azul Brilhante ....... #0552AC   CTAs secundários, destaques
 
 Tipografia — o manual usa TAN Aegean e Mont, que são fontes pagas e
@@ -57,13 +57,21 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   elas só trocam o tom do fundo, todo o resto do comportamento continua
   igual ao .bg-escuro. Uma seção ficou clara de propósito, a dos
   depoimentos, para dar respiro no meio da leitura.
-• O rosa ficou mais escuro no site inteiro: --magenta foi de #B42150
-  (o do manual) para #8E1A3F, e --magenta-claro de #D9648B para #A93356.
-  Entraram neutros frios de apoio: --grafite, --grafite-suave e --neutro.
-  Para voltar ao rosa do manual é só trocar os dois valores no :root.
-• A primeira dobra da mentoria tem gradiente próprio, bem mais fechado
-  que o institucional: está em .hero--recorte, no style.css. As outras
-  páginas continuam com o .bg-gradiente original.
+• O rosa ficou bem mais escuro no site inteiro: --magenta foi de #B42150
+  (o do manual) para #6D1330, e --magenta-claro de #D9648B para #8A2846.
+  Os valores fixos que não vinham do :root (sombras de botão, hover,
+  grifos, cartão da bio) foram ajustados junto. Para voltar ao rosa do
+  manual é só trocar os dois valores no :root e rever esses fixos.
+• A mentoria entrou em TEMA NOITE. O <body> dela tem a classe .tema-noite
+  e o bloco no fim do style.css leva o azul das seções para perto do preto
+  (#020A1C), junto com o topo, o rodapé e a barra de CTA. O gradiente da
+  primeira dobra está em .hero--recorte e é quase preto. O link da bio e a
+  página do livro continuam com o Azul Profundo Noturno do manual.
+• A escala escura desceu junto: --grafite #11151F, --grafite-suave #1A1F2B
+  e --noturno-fundo #01081A.
+• No tema noite o azul brilhante do botão "Quero mudar isso" foi rebaixado:
+  com o magenta tão escuro, ele passou a gritar mais que o CTA principal
+  e invertia a hierarquia da página.
 • O recorte do topo foi refeito. A borda serrilhava porque o modelo de
   recorte entrega a máscara em 1024px e ela era ampliada: agora a máscara
   é suavizada e recontrastada antes de virar alfa. E a base não esmaece
