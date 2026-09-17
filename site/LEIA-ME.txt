@@ -47,6 +47,44 @@ magenta, azul-claro e branco conforme o fundo da seção. Ficam no
 ornamento de cada seção, nos marcadores de lista e na faixa animada.
 
 
+O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
+--------------------------------------------------------------------
+• A página da mentoria ficou escura. O azul noturno virou a base e as
+  seções que eram off-white viraram grafite (#171C29) e grafite suave
+  (#232936). As classes novas são .bg-escuro--grafite, --noite e --brisa:
+  elas só trocam o tom do fundo, todo o resto do comportamento continua
+  igual ao .bg-escuro. Uma seção ficou clara de propósito, a dos
+  depoimentos, para dar respiro no meio da leitura.
+• O rosa muito claro saiu. O --magenta-claro foi de #D9648B para #C2496E,
+  e entraram neutros frios no lugar dele: --grafite, --grafite-suave e
+  --neutro (#A7AEBC). O magenta escuro da marca continua igual.
+• Saíram os depoimentos masculinos. Os femininos ganharam foto ou
+  monograma ao lado do nome.
+• Dobra nova de trajetória, com mosaico de fotos, linha do tempo, selos
+  e números — já corrigida com as respostas da Bárbara em 17/09.
+  ATENÇÃO: a FEBRACIS foi RETIRADA da página inteira por pedido dela,
+  por questão imigratória: ela não pode afirmar publicamente que
+  trabalhou lá. Não recolocar sem o aval de quem cuida do processo dela.
+  Os nomes dos laboratórios (EMS e Bagó) também saíram, porque ela não
+  soube dizer se podem ser citados. Tudo explicado em
+  VALIDAR-COM-A-BARBARA.md, na raiz desta pasta.
+• Entrou na trajetória: cadeira de imortal na ABRACE (Academia
+  Brasileira de Arte, Cultura, História e Literatura) e a Medalha de
+  Mérito Profissional. Virou o selo em destaque.
+• O número de anos passou de "+20" para "9 anos com comportamento
+  humano", que é o correto segundo ela.
+• Fotos de palco, sala cheia, turma e bastidor entraram na página. As
+  fotos de roupa preta saíram; no lugar entraram as de terno branco do
+  evento Raiz, que conversam melhor com a identidade.
+• A arquitetura interativa foi refeita. No celular ela deixou de ser um
+  balão flutuante e virou sanfona: o painel abre dentro do fluxo da
+  página e empurra o conteúdo, então não é mais cortado. No desktop
+  continua balão, e a seção ganhou overflow lateral para ele não ser
+  aparado pela borda.
+• O aviso de que a mentoria não substitui terapia ficou só no FAQ. Saiu
+  da lista "não é para você se" e foi encurtado no rodapé.
+
+
 AS 2 COISAS QUE PRECISAM SER PREENCHIDAS
 --------------------------------------------------------------------
 
