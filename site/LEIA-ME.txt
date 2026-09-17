@@ -86,6 +86,11 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   A ficha rápida e as etapas do "como funciona" viraram 2 colunas em vez
   de carrossel, porque são curtas. O respiro entre seções caiu de 56px
   para 44px no celular.
+• Rostos cortados no celular: as fotos em pé (palco-2 e traj-palestra,
+  900x1125) perdiam 40% da altura ao entrar na caixa deitada do carrossel,
+  e o corte pelo centro comia a cabeça. Entraram as classes .foco-alto e
+  .foco-meio, que só movem o object-position. Se trocar alguma foto por
+  outra em pé, é só pôr .foco-alto nela.
 • BUG CORRIGIDO na página do livro no celular: a dobra "Sobre o livro"
   saía da tela e o texto ficava cortado na direita. Causa: um filho de
   grade com conteúdo largo (a faixa de chips) esticava a coluna, porque

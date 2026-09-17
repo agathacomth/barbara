@@ -1335,6 +1335,10 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   /* fotos no carrossel ganham altura fixa, senão cada uma tem a sua */
   .mosaico > figure, .duo > figure { grid-area: auto; aspect-ratio: 4 / 3; height: auto; }
   .mosaico img, .duo img { height: 100%; }
+  /* Foto em pé dentro de uma caixa deitada perde 40% da altura. Sem dizer
+     onde está o rosto, o corte come a cabeça. Daí as classes de foco. */
+  .foco-alto  { object-position: center 12% !important; }
+  .foco-meio  { object-position: center 34% !important; }
 
   /* a linha do tempo vira cartão dentro do carrossel */
   .trajetoria { grid-auto-columns: 88%; }
@@ -1385,3 +1389,12 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   }
   .bg-papel .carrossel-dica { color: var(--texto-suave); }
 }
+
+/* Frase que abre a linha do tempo da trajetória */
+.abre-linha {
+  max-width: 44rem; margin: 2.2rem auto 1.8rem; text-align: center;
+  font-family: var(--display); font-size: 1.15rem; line-height: 1.6;
+  color: var(--azul-claro);
+}
+.bg-claro .abre-linha, .bg-papel .abre-linha { color: var(--magenta); }
+@media (max-width: 899px) { .abre-linha { font-size: 1.02rem; margin-bottom: 1.4rem; } }
