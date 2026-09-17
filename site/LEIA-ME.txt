@@ -21,7 +21,9 @@ Cores — estão no topo do style.css, em :root. Mudar ali muda tudo.
 
   Off White ............ #E9E8E9   fundos claros, respiro
   Azul Profundo Noturno  #001F54   fundos densos, títulos
-  Rosa Magenta ......... #B42150   grifos, botões, pontos emocionais
+  Rosa Magenta ......... #8E1A3F   grifos, botões, pontos emocionais
+                                   (o manual traz #B42150; escurecido a
+                                   pedido da Ágatha, em todo o site)
   Azul Brilhante ....... #0552AC   CTAs secundários, destaques
 
 Tipografia — o manual usa TAN Aegean e Mont, que são fontes pagas e
@@ -55,9 +57,20 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   elas só trocam o tom do fundo, todo o resto do comportamento continua
   igual ao .bg-escuro. Uma seção ficou clara de propósito, a dos
   depoimentos, para dar respiro no meio da leitura.
-• O rosa muito claro saiu. O --magenta-claro foi de #D9648B para #C2496E,
-  e entraram neutros frios no lugar dele: --grafite, --grafite-suave e
-  --neutro (#A7AEBC). O magenta escuro da marca continua igual.
+• O rosa ficou mais escuro no site inteiro: --magenta foi de #B42150
+  (o do manual) para #8E1A3F, e --magenta-claro de #D9648B para #A93356.
+  Entraram neutros frios de apoio: --grafite, --grafite-suave e --neutro.
+  Para voltar ao rosa do manual é só trocar os dois valores no :root.
+• A primeira dobra da mentoria tem gradiente próprio, bem mais fechado
+  que o institucional: está em .hero--recorte, no style.css. As outras
+  páginas continuam com o .bg-gradiente original.
+• O recorte do topo foi refeito. A borda serrilhava porque o modelo de
+  recorte entrega a máscara em 1024px e ela era ampliada: agora a máscara
+  é suavizada e recontrastada antes de virar alfa. E a base não esmaece
+  mais para transparente (virava uma névoa esbranquiçada sobre o escuro):
+  a imagem fica opaca e um degradê em CSS (.hero__recorte::after) dissolve
+  ela na cor exata da seção de baixo. Se mudar o quanto ela invade a dobra
+  (a margem negativa), mude a altura do degradê no mesmo tanto.
 • Saíram os depoimentos masculinos. Os femininos ganharam foto ou
   monograma ao lado do nome.
 • Dobra nova de trajetória, com mosaico de fotos, linha do tempo, selos

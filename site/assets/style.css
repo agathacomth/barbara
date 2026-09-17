@@ -9,7 +9,7 @@
   /* --- Paleta oficial da marca --- */
   --off-white:      #E9E8E9;
   --noturno:        #001F54;   /* Azul Profundo Noturno */
-  --magenta:        #B42150;   /* Rosa Magenta */
+  --magenta:        #8E1A3F;   /* Rosa Magenta escurecido a pedido da Ágatha (oficial: #B42150) */
   --brilhante:      #0552AC;   /* Azul Brilhante */
 
   /* --- Derivadas (mesma família, para hierarquia) --- */
@@ -19,7 +19,7 @@
   --papel:          #F4F4F5;
   --linha:          #D3D5DB;
   --azul-claro:     #8FB0DE;
-  --magenta-claro:  #C2496E;   /* rosa escurecido: menos delicado, mais firme */
+  --magenta-claro:  #A93356;   /* o rosa de apoio, também escurecido */
 
   /* --- Neutros sofisticados (respiro dentro do escuro) --- */
   --grafite:        #171C29;   /* neutro escuro, quente */
@@ -112,7 +112,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 
 /* --- Grifos e destaques de palavra-chave --- */
 .grifo {
-  background-image: linear-gradient(to top, rgba(180, 33, 80, .22) 0 .38em, transparent .38em);
+  background-image: linear-gradient(to top, rgba(142, 26, 63, .22) 0 .38em, transparent .38em);
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
   padding: 0 .1em;
@@ -134,7 +134,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 .destaque--azul{ color: var(--brilhante); font-weight: 500; }
 
 .bg-escuro .grifo, .bg-magenta .grifo, .bg-azul .grifo {
-  background-image: linear-gradient(to top, rgba(180, 33, 80, .55) 0 .42em, transparent .42em);
+  background-image: linear-gradient(to top, rgba(142, 26, 63, .55) 0 .42em, transparent .42em);
   color: #fff;
 }
 .bg-escuro .grifo--azul { background-image: linear-gradient(to top, rgba(5, 82, 172, .62) 0 .42em, transparent .42em); }
@@ -253,8 +253,8 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 }
 .btn svg { width: 16px; height: 16px; flex: 0 0 auto; }
 
-.btn--magenta { background: var(--magenta); color: #fff; box-shadow: 0 14px 34px -14px rgba(180,33,80,.7); }
-.btn--magenta:hover { background: #9C1B44; transform: translateY(-3px); box-shadow: 0 20px 40px -14px rgba(180,33,80,.8); }
+.btn--magenta { background: var(--magenta); color: #fff; box-shadow: 0 14px 34px -14px rgba(142,26,63,.7); }
+.btn--magenta:hover { background: #7C1636; transform: translateY(-3px); box-shadow: 0 20px 40px -14px rgba(142,26,63,.8); }
 
 .btn--azul { background: var(--brilhante); color: #fff; box-shadow: 0 14px 34px -14px rgba(5,82,172,.7); }
 .btn--azul:hover { background: #04448E; transform: translateY(-3px); }
@@ -350,8 +350,8 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 .bio-link--noturno .bio-link__icone { background: rgba(233,232,233,.12); color: var(--azul-claro); border-color: rgba(143,176,222,.35); }
 .bio-link--noturno .bio-link__seta { border-color: rgba(143,176,222,.45); color: var(--azul-claro); }
 
-.bio-link--magenta { border-color: rgba(180,33,80,.4); }
-.bio-link--magenta::before { background: linear-gradient(100deg, rgba(180,33,80,.97) 0%, rgba(160,28,70,.93) 54%, rgba(180,33,80,.62) 100%); }
+.bio-link--magenta { border-color: rgba(142,26,63,.4); }
+.bio-link--magenta::before { background: linear-gradient(100deg, rgba(142,26,63,.97) 0%, rgba(122,20,52,.93) 54%, rgba(142,26,63,.62) 100%); }
 .bio-link--magenta .bio-link__titulo { color: #fff; }
 .bio-link--magenta .bio-link__sub { color: rgba(255,255,255,.82); }
 .bio-link--magenta .bio-link__icone { background: rgba(255,255,255,.16); color: #fff; border-color: rgba(255,255,255,.32); }
@@ -385,7 +385,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 }
 .cartao-crenca p { font-size: .98rem; }
 .cartao-crenca strong { color: #fff; }
-.cartao-crenca .grifo { background-image: linear-gradient(to top, rgba(180,33,80,.6) 0 .42em, transparent .42em); color: #fff; }
+.cartao-crenca .grifo { background-image: linear-gradient(to top, rgba(142,26,63,.6) 0 .42em, transparent .42em); color: #fff; }
 
 .bio-sobre { margin: 0 -22px; background: var(--branco); padding: 38px 22px; }
 .bio-sobre__foto { width: 100%; border-radius: var(--r-lg); aspect-ratio: 4 / 4.2; object-fit: cover; object-position: 50% 12%; margin-bottom: 24px; box-shadow: var(--sombra); }
@@ -422,6 +422,8 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 
 /* ── Hero com foto recortada que atravessa para a dobra seguinte ── */
 .hero--recorte {
+  /* azul mais fechado que o gradiente institucional, a pedido da Ágatha */
+  background: linear-gradient(162deg, #000A22 0%, #001336 48%, #04204F 100%);
   padding-bottom: 0;
   /* corta só na horizontal para o recorte poder vazar para baixo */
   overflow-x: clip;
@@ -435,12 +437,25 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   display: block;
   width: 100%;
   max-width: 296px;
-  height: auto;
   margin: 0 auto -66px;
-  /* sombra de contato embaixo + halo frio para destacar do azul */
-  filter: drop-shadow(0 16px 22px rgba(0, 8, 30, .48))
-          drop-shadow(0 4px 8px rgba(0, 8, 30, .30))
-          drop-shadow(0 0 24px rgba(143, 176, 222, .22));
+}
+.hero__recorte img {
+  width: 100%; height: auto; display: block;
+  /* sombra de contato + halo frio para destacar do azul */
+  filter: drop-shadow(0 16px 22px rgba(0, 6, 22, .55))
+          drop-shadow(0 4px 8px rgba(0, 6, 22, .35))
+          drop-shadow(0 0 24px rgba(143, 176, 222, .18));
+}
+/* A base não esmaece para transparente (virava névoa branca sobre o escuro):
+   ela se dissolve exatamente na cor da seção que recebe o recorte. */
+.hero__recorte::after {
+  content: '';
+  position: absolute; left: -6%; right: -6%; bottom: -1px;
+  /* a altura tem que casar com o quanto o recorte invade a dobra seguinte
+     (a margem negativa abaixo), senão o degradê começa ainda sobre o azul */
+  height: 68px;
+  background: linear-gradient(to bottom, rgba(23, 28, 41, 0) 0%, rgba(23, 28, 41, .55) 45%, var(--grafite) 88%);
+  pointer-events: none;
 }
 /* a dobra seguinte abre espaço para as pernas que entram nela */
 .secao-recebe-recorte { padding-top: clamp(96px, 12vw, 150px); }
@@ -448,6 +463,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   .hero--recorte .hero__grid { grid-template-columns: 1.1fr .9fr; }
   .hero--recorte .hero__coluna-texto { padding-bottom: clamp(52px, 7vw, 92px); }
   .hero__recorte { max-width: 430px; margin-bottom: -132px; }
+  .hero__recorte::after { height: 134px; }
 }
 
 .marca-dagua {
@@ -523,7 +539,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 
 .cartao__icone {
   width: 46px; height: 46px; display: grid; place-items: center; border-radius: var(--r-full);
-  background: rgba(180,33,80,.1); color: var(--magenta); margin-bottom: 1rem;
+  background: rgba(142,26,63,.1); color: var(--magenta); margin-bottom: 1rem;
 }
 .cartao__icone svg { width: 22px; height: 22px; }
 .cartao__icone .el { height: 24px; }
@@ -708,7 +724,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 .video-caixa__play {
   width: 68px; height: 68px; border-radius: var(--r-full);
   background: var(--magenta); display: grid; place-items: center; margin: 0 auto 1rem; color: #fff;
-  box-shadow: 0 12px 30px -10px rgba(180,33,80,.8);
+  box-shadow: 0 12px 30px -10px rgba(142,26,63,.8);
 }
 .video-caixa__play svg { width: 24px; height: 24px; margin-left: 4px; }
 .video-caixa p { color: rgba(233,232,233,.7); font-size: .72rem; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; margin: 0; }
@@ -824,7 +840,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 
 .aviso {
   display: flex; gap: 15px; align-items: flex-start;
-  background: rgba(180,33,80,.07); border: 1px solid rgba(180,33,80,.3); border-left: 4px solid var(--magenta);
+  background: rgba(142,26,63,.07); border: 1px solid rgba(142,26,63,.3); border-left: 4px solid var(--magenta);
   border-radius: var(--r); padding: 20px 22px; margin: 1.8rem auto 0; max-width: 680px;
 }
 .aviso svg { flex: 0 0 auto; width: 20px; height: 20px; color: var(--magenta); margin-top: .18em; }
@@ -1089,7 +1105,7 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
   padding: .62em 1.05em; border-radius: var(--r-full);
   border: 1px solid rgba(167,174,188,.3); color: var(--neutro);
 }
-.selos span.selos--forte { border-color: var(--magenta); color: #fff; background: rgba(180,33,80,.22); }
+.selos span.selos--forte { border-color: var(--magenta); color: #fff; background: rgba(142,26,63,.22); }
 .bg-claro .selos span { border-color: var(--linha); color: var(--texto-suave); }
 
 /* Números da trajetória */

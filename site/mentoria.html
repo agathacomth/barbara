@@ -68,8 +68,11 @@
       </div>
       <div>
         <!-- Foto recortada (fundo removido). A base atravessa para a dobra
-             seguinte; a sombra do CSS (.hero__recorte) dá a profundidade. -->
-        <img class="hero__recorte" src="./img/barbara-recorte.webp" alt="Bárbara Germani" width="900" height="1509" fetchpriority="high">
+             seguinte e se dissolve na cor dela pelo degradê do ::after, em vez
+             de esmaecer para transparente (que deixava um borrão esbranquiçado). -->
+        <div class="hero__recorte">
+          <img src="./img/barbara-recorte.webp" alt="Bárbara Germani" width="1000" height="1699" fetchpriority="high">
+        </div>
       </div>
     </div>
   </div>
