@@ -62,9 +62,10 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   monograma ao lado do nome.
 • Dobra nova de trajetória, com mosaico de fotos, linha do tempo, selos
   e números — já corrigida com as respostas da Bárbara em 17/09.
-  ATENÇÃO: a FEBRACIS foi RETIRADA da página inteira por pedido dela,
-  por questão imigratória: ela não pode afirmar publicamente que
-  trabalhou lá. Não recolocar sem o aval de quem cuida do processo dela.
+  ATENÇÃO NA FEBRACIS: a frase da etapa "2023 a 2025" foi escrita sem
+  nenhum verbo de trabalho e sem tom de saída, de propósito. Não trocar
+  por "atuei", "trabalhei" ou "fui mentora lá" sem falar com a Bárbara.
+  Está explicado em VALIDAR-COM-A-BARBARA.md.
   Os nomes dos laboratórios (EMS e Bagó) também saíram, porque ela não
   soube dizer se podem ser citados. Tudo explicado em
   VALIDAR-COM-A-BARBARA.md, na raiz desta pasta.

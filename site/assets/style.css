@@ -1169,3 +1169,18 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 /* A seção que contém a arquitetura precisa deixar a dica vazar para baixo
    no desktop (senão o overflow:hidden das seções corta o balão). */
 .secao-dica { overflow-x: clip; overflow-y: visible; z-index: 2; }
+
+/* Par de fotos (mídia, bastidores) — mesmo acabamento do mosaico */
+.duo { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+@media (max-width: 640px) { .duo { grid-template-columns: 1fr; } }
+.duo figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--grafite-suave); }
+.duo img { width: 100%; display: block; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .7s cubic-bezier(.22,.61,.36,1); }
+.duo figure:hover img { transform: scale(1.04); }
+.duo figcaption,
+.mosaico figcaption {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 34px 16px 14px;
+  background: linear-gradient(to top, rgba(0,8,26,.88), rgba(0,8,26,0));
+  color: #fff; font-size: .68rem; font-weight: 500;
+  letter-spacing: .12em; text-transform: uppercase;
+}
