@@ -72,6 +72,13 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
 • No tema noite o azul brilhante do botão "Quero mudar isso" foi rebaixado:
   com o magenta tão escuro, ele passou a gritar mais que o CTA principal
   e invertia a hierarquia da página.
+• No celular e no tablet o topo da mentoria virou composição lado a lado:
+  a foto fica pequena, à direita do olho e do título, e o texto de apoio e
+  os botões ocupam a largura inteira. Ela só atravessa para a dobra
+  seguinte no desktop; no celular fica inteira dentro do topo, com um
+  esmaecimento curto na base. Tudo está no bloco "Celular: a foto do topo
+  da mentoria fica pequena, ao lado do título", no fim do style.css, com
+  três tamanhos: até 400px, até 899px e de 600px a 899px (tablet).
 • O recorte do topo foi refeito. A borda serrilhava porque o modelo de
   recorte entrega a máscara em 1024px e ela era ampliada: agora a máscara
   é suavizada e recontrastada antes de virar alfa. E a base não esmaece
