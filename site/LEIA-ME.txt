@@ -124,9 +124,13 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   Os nomes dos laboratórios (EMS e Bagó) também saíram, porque ela não
   soube dizer se podem ser citados. Tudo explicado em
   VALIDAR-COM-A-BARBARA.md, na raiz desta pasta.
-• Entrou na trajetória: cadeira de imortal na ABRACE (Academia
-  Brasileira de Arte, Cultura, História e Literatura) e a Medalha de
-  Mérito Profissional. Virou o selo em destaque.
+• Entrou na trajetória: cadeira de imortal na ABRASCI (Academia
+  Brasileira de Ciências, Artes, História e Literatura) e a Medalha de
+  Mérito Profissional. Virou o selo em destaque. O nome e a sigla foram
+  corrigidos em 18/09: eu tinha escrito "ABRACE / Academia Brasileira de
+  Arte, Cultura, História e Literatura", tirado do áudio, e estava errado
+  nos dois. Os currículos da Bárbara e o site da instituição confirmam
+  ABRASCI.
 • O número de anos passou de "+20" para "9 anos com comportamento
   humano", que é o correto segundo ela.
 • Fotos de palco, sala cheia, turma e bastidor entraram na página. As

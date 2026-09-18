@@ -23,7 +23,7 @@ A Ágatha pediu para a Febracis constar, como algo positivo na carreira, sem nen
 > **2023 a 2025** · Método CIS, em Orlando, ao lado do Paulo Vieira e da Camila Vieira
 > Três anos dentro do universo Febracis, acompanhando de perto um dos trabalhos de desenvolvimento humano mais conhecidos do Brasil. Boa parte do meu repertório sobre identidade e comportamento se formou ali.
 
-E o selo "Febracis · Método CIS" voltou para a faixa de instituições, em segundo plano. O destaque em magenta continua sendo a ABRACE.
+E o selo "Febracis · Método CIS" voltou para a faixa de instituições, em segundo plano. O destaque em magenta continua sendo a ABRASCI.
 
 **O que eu evitei de propósito, e por quê.** Não há nenhum verbo de trabalho na frase: nada de "atuei", "trabalhei", "fui mentora lá", "integrei o time". O que está escrito é presença e formação, que é diferente de vínculo. Também não há nada que soe como despedida: nem "saí", nem "encerrei ciclo", nem "depois disso segui meu caminho". A leitura é de credencial, não de currículo com data de rescisão.
 
@@ -48,14 +48,14 @@ Duas variações, se a de cima não passar:
 
 ## ✨ O que ela trouxe de novo e eu incluí
 
-**Cadeira de imortal na Academia Brasileira de Arte, Cultura, História e Literatura (ABRACE)**, como acadêmica, e a **Medalha de Mérito Profissional**.
+**Cadeira de imortal na Academia Brasileira de Ciências, Artes, História e Literatura (ABRASCI)**, como acadêmica, e a **Medalha de Mérito Profissional**.
 
 Isso virou uma etapa própria na linha do tempo, sob o título "Reconhecimento", e é o selo em destaque, em magenta, no lugar que era da Febracis. É o item de autoridade mais forte da página agora.
 
 Duas coisas para ela confirmar:
 
-1. O nome completo da academia está certo? Escrevi "Academia Brasileira de Arte, Cultura, História e Literatura", com a sigla ABRACE.
-2. A medalha foi em 2025? Ela falou "no ano passado". Não coloquei o ano na página, para não errar. Se ela confirmar, eu coloco: ano dá peso.
+1. CORRIGIDO em 18/09. Eu tinha escrito "Academia Brasileira de Arte, Cultura, História e Literatura", sigla ABRACE, tirando do áudio. Estava errado nos dois. Os dois currículos da Bárbara trazem ABRASCI, e a instituição existe com esse nome: Academia Brasileira de Ciências, Artes, História e Literatura (abrasci.com.br). A página foi corrigida.
+2. O ano da medalha continua em aberto, e agora com uma divergência. No áudio ela falou "no ano passado", o que daria 2025. Os dois currículos trazem 2026. Não pus o ano na página. Ela precisa dizer qual é.
 
 ---
 
