@@ -137,6 +137,29 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   página e empurra o conteúdo, então não é mais cortado. No desktop
   continua balão, e a seção ganhou overflow lateral para ele não ser
   aparado pela borda.
+• A PÁGINA DO LIVRO ENTROU NO TEMA NOITE. O <body> dela ganhou a classe
+  .tema-noite, igual à mentoria, e o gradiente institucional passou a ter
+  uma versão escura (.tema-noite .bg-gradiente), na mesma direção e nos
+  mesmos pontos de parada do manual, só que na escala escura. Resultado:
+  o topo, a dobra "Sobre o livro", o cabeçalho, o rodapé e a barra de CTA
+  ficaram exatamente no mesmo azul da mentoria. As dobras claras
+  (bg-claro e bg-papel) continuam claras, que é o que dá respiro à
+  leitura da carta e dos depoimentos. O theme-color da aba também desceu.
+  O LINK DA BIO (index.html) continua no Azul Profundo Noturno do manual,
+  #001F54. Ele tem estrutura própria (.bio), não usa .bg-gradiente nem
+  .bg-escuro, então precisa de regras separadas. Diga se quer que ele
+  acompanhe também.
+• A DOBRA DO PREÇO SUBIU. Antes ela ficava depois da trajetória, a 79%
+  da página. Agora entra logo após os depoimentos, a 56%, e a
+  apresentação da Bárbara e a trajetória vêm depois dela. A lógica: a
+  pessoa chega no preço já convencida pela prova social, e a autoridade
+  passa a responder "vale o quanto custa" em vez de ser só currículo.
+  Como o preço agora fica acima da trajetória, entrou uma faixa curta de
+  CTA entre a trajetória e o FAQ, para quem se convence no fim não ter
+  que rolar a página de volta.
+• Saiu a marca d'água "™" da dobra "O que você recebe". No tamanho em
+  que ela era desenhada, o símbolo virava duas letras soltas, "TM", e
+  lia-se como erro. As outras três marcas d'água são palavras e número.
 • ROSTOS CORTADOS, SEGUNDA RODADA. A foto "Conduzindo" estava cortada no
   arquivo original, não no CSS: o recorte que eu tinha feito já entrava
   sem a cabeça dela. Refiz o corte a partir da DSC_8826, agora com a

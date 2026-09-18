@@ -1224,6 +1224,12 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
    As outras páginas continuam com o Azul Profundo Noturno do manual (#001F54).
    ========================================================================== */
 .tema-noite .bg-escuro { background: #020A1C; }
+/* O gradiente institucional acompanha. Mesma direção e mesmos pontos de
+   parada do manual, só que na escala escura, para o topo da livro.html
+   ficar no mesmo azul da mentoria. */
+.tema-noite .bg-gradiente {
+  background: linear-gradient(155deg, #01040C 0%, #020A1C 55%, #05132E 100%);
+}
 .tema-noite .bg-escuro--grafite { background: var(--grafite); }
 .tema-noite .bg-escuro--noite   { background: var(--noturno-fundo); }
 .tema-noite .bg-escuro--brisa   { background: var(--grafite-suave); }
