@@ -141,6 +141,23 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   página e empurra o conteúdo, então não é mais cortado. No desktop
   continua balão, e a seção ganhou overflow lateral para ele não ser
   aparado pela borda.
+• OS CARROSSÉIS DO CELULAR PASSAM SOZINHOS. O arrasto com o dedo continua
+  igual: quem quiser conduzir, conduz. O que entrou foi uma passagem
+  automática, só para mostrar que tem mais coisa para o lado, com quatro
+  travas para não virar incômodo:
+    1. só anda enquanto o bloco está na tela (mais da metade dele visível);
+    2. para DE VEZ no primeiro toque, arrasto, roda do mouse ou tecla, e não
+       volta a andar naquele bloco;
+    3. faz uma ida até o último cartão e uma volta até o primeiro, e para ali.
+       Termina onde começou, então ninguém fica preso num cartão do meio;
+    4. não anda para quem pediu menos movimento nas preferências do celular.
+  O tempo em cada cartão é de 4 segundos: está na constante INTERVALO, no
+  começo do bloco 2 do site.js. Para desligar de vez, é só apagar o trecho
+  do IntersectionObserver no fim da função montar().
+  Detalhe: a dica "arraste para o lado" agora some só depois do arrasto DA
+  PESSOA. Antes ela sumia em qualquer rolagem, e com o movimento automático
+  a única instrução da tela desapareceria sozinha no primeiro passo.
+  Vale nas duas páginas que têm carrossel, a da mentoria e a do livro.
 • A PÁGINA DO LIVRO ENTROU NO TEMA NOITE. O <body> dela ganhou a classe
   .tema-noite, igual à mentoria, e o gradiente institucional passou a ter
   uma versão escura (.tema-noite .bg-gradiente), na mesma direção e nos
