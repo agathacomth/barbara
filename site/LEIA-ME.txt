@@ -1,4 +1,4 @@
-SITE BÁRBARA GERMANI — v2 (identidade oficial da marca)
+SITE BÁRBARA GERMANI · v2 (identidade oficial da marca)
 ====================================================================
 
 ARQUIVOS
@@ -17,7 +17,7 @@ img/ ............................. Logo, fotos e capa do livro
 
 IDENTIDADE VISUAL APLICADA (do Manual de Marca)
 --------------------------------------------------------------------
-Cores — estão no topo do style.css, em :root. Mudar ali muda tudo.
+Cores: estão no topo do style.css, em :root. Mudar ali muda tudo.
 
   Off White ............ #E9E8E9   fundos claros, respiro
   Azul Profundo Noturno  #001F54   fundos densos, títulos
@@ -26,7 +26,7 @@ Cores — estão no topo do style.css, em :root. Mudar ali muda tudo.
                                    dois passos a pedido da Ágatha)
   Azul Brilhante ....... #0552AC   CTAs secundários, destaques
 
-Tipografia — o manual usa TAN Aegean e Mont, que são fontes pagas e
+Tipografia: o manual usa TAN Aegean e Mont, que são fontes pagas e
 não podem ser servidas na web sem licença. Usei as equivalentes livres
 mais próximas, já auto-hospedadas:
 
@@ -37,14 +37,14 @@ mais próximas, já auto-hospedadas:
   Se a Bárbara tiver a licença web das originais, é só trocar os
   arquivos em assets/fonts/ e os nomes em assets/fonts.css.
 
-Logo — extraí do manual em duas versões, com fundo transparente:
+Logo: extraí do manual em duas versões, com fundo transparente:
   img/logo-bg.png / logo-lockup.png ........ para fundos claros
   img/logo-bg-claro.png / ...-claro.png .... para fundos escuros
   img/favicon.png .......................... ícone da aba
 
-Elementos gráficos — os símbolos OFICIAIS (boca, onda sonora, ramo e
+Elementos gráficos: os símbolos OFICIAIS (boca, onda sonora, ramo e
 porta) estão em img/simbolo-*.png. Eles entram como máscara CSS, então
-assumem qualquer cor da paleta com uma linha de CSS — aparecem em
+assumem qualquer cor da paleta com uma linha de CSS e aparecem em
 magenta, azul-claro e branco conforme o fundo da seção. Ficam no
 ornamento de cada seção, nos marcadores de lista e na faixa animada.
 
@@ -116,7 +116,7 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
 • Saíram os depoimentos masculinos. Os femininos ganharam foto ou
   monograma ao lado do nome.
 • Dobra nova de trajetória, com mosaico de fotos, linha do tempo, selos
-  e números — já corrigida com as respostas da Bárbara em 17/09.
+  e números, já corrigida com as respostas da Bárbara em 17/09.
   ATENÇÃO NA FEBRACIS: a frase da etapa "2023 a 2025" foi escrita sem
   nenhum verbo de trabalho e sem tom de saída, de propósito. Não trocar
   por "atuei", "trabalhei" ou "fui mentora lá" sem falar com a Bárbara.
@@ -137,6 +137,23 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   página e empurra o conteúdo, então não é mais cortado. No desktop
   continua balão, e a seção ganhou overflow lateral para ele não ser
   aparado pela borda.
+• ROSTOS CORTADOS, SEGUNDA RODADA. A foto "Conduzindo" estava cortada no
+  arquivo original, não no CSS: o recorte que eu tinha feito já entrava
+  sem a cabeça dela. Refiz o corte a partir da DSC_8826, agora com a
+  cabeça inteira e folga em cima, e a foto do abraço ("O que fica")
+  também foi refeita a partir da DSC_9065 pelo mesmo motivo. Depois
+  disso conferi uma a uma as seis fotos dos dois mosaicos, no celular e
+  no computador, olhando cada slide, em vez de confiar na conta de
+  proporção. A classe .foco-topo é nova e vale em qualquer tela, porque
+  .foco-alto e .foco-meio só existem dentro do bloco do celular.
+• Ficou só UMA foto do podcast, a mais fechada nela. O bloco virou
+  .foto-podcast, uma figura única centralizada, no lugar do par .duo.
+• Saíram TODOS os travessões das quatro páginas e deste arquivo. No
+  lugar entraram dois-pontos, vírgula ou o ponto médio (·) nos títulos.
+• A frase que abre a linha do tempo foi reescrita. A anterior dizia que
+  cada etapa "deixou alguma coisa no método", o que não explica nada.
+  Agora ela nomeia o que veio de cada lugar: o teatro, o corporativo e
+  a mentoria.
 • O aviso de que a mentoria não substitui terapia ficou só no FAQ. Saiu
   da lista "não é para você se" e foi encurtado no rodapé.
 
@@ -145,16 +162,16 @@ AS 2 COISAS QUE PRECISAM SER PREENCHIDAS
 --------------------------------------------------------------------
 
 1) LINK DO CHECKOUT DA MENTORIA
-   Arquivo: mentoria.html — no começo, procure por CHECKOUT_URL.
+   Arquivo: mentoria.html, no começo, procure por CHECKOUT_URL.
 
        var CHECKOUT_URL = "";
 
    Cole a URL entre as aspas. Os 6 botões de inscrição da página
    passam a apontar para lá. Enquanto estiver vazio, eles abrem o
-   WhatsApp da Bárbara com uma mensagem pronta — nenhum botão morto.
+   WhatsApp da Bárbara com uma mensagem pronta, nenhum botão morto.
 
 2) VÍDEO DE APRESENTAÇÃO DA MENTORIA
-   Arquivo: mentoria.html — procure por "ESPAÇO DO VÍDEO".
+   Arquivo: mentoria.html, procure por "ESPAÇO DO VÍDEO".
    Troque a <div class="video-caixa"> pelo iframe do YouTube/Vimeo.
    Ele já está dentro do mockup de notebook.
 
@@ -166,16 +183,16 @@ O QUE JÁ ESTÁ FUNCIONANDO
 ✓ Instagram, LinkedIn e a entrevista d'A Gazeta Popular
 ✓ Botão de compartilhar o livro no WhatsApp (com aviso do navegador)
 ✓ Depoimentos reais transcritos das conversas
-✓ GIF oficial do livro girando no topo da livro.html — feito a partir
+✓ GIF oficial do livro girando no topo da livro.html, feito a partir
   do seu "gir capa do livro.gif", reduzido de 9,2 MB para 851 KB
   (520px, 16 fps). O fundo é transparente: o livro gira solto sobre a
   seção, sem moldura e sem caixa cinza atrás
-✓ Foto recortada no topo da mentoria: img/barbara-recorte.webp — fundo
+✓ Foto recortada no topo da mentoria: img/barbara-recorte.webp, fundo
   removido, a base atravessa para a dobra da ficha rápida. A sombra e o
   halo são de CSS (.hero__recorte no style.css), então dá para ajustar a
   profundidade sem mexer na imagem. O arquivo é .webp por causa da
   transparência com qualidade de foto (o PNG equivalente pesaria 1,4 MB
-  contra 138 KB) — formato aberto, roda em todos os navegadores atuais
+  contra 138 KB), formato aberto, roda em todos os navegadores atuais
 ✓ Fotos novas da Bárbara aplicadas em todo o site (hero, cartões da bio,
   "quem sou eu", hero da mentoria, "quem conduz" e imagem de
   compartilhamento). Continuam as originais só a foto de fundo da faixa

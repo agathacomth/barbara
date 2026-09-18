@@ -76,10 +76,6 @@ Duas coisas para ela confirmar:
 - **Jesus Pod, de Luzia Costa:** duas fotos na dobra de trajetória, logo abaixo da linha do tempo, e o podcast entrou na etapa "Convidada na TV e em podcasts", junto com o SC no Ar.
 - **Foto de grupo nova da Imersão Raiz:** substituiu a anterior no mosaico dos depoimentos. Enquadramento melhor e o painel da RAIZ aparece atrás.
 
-**Um ponto para pensar, não é um problema técnico.** A página diz, no FAQ, que a Identidade Raiz não é uma mentoria de espiritualidade. As duas fotos do podcast têm o logo "Jesus Pod" bem visível ao fundo. Não são incompatíveis: aparecer num podcast cristão é credencial de mídia, não é posicionamento do produto. Mas alguém que chega pela primeira vez pode ler as duas coisas juntas. Três saídas, se isso incomodar:
+**Resolvido em 17/09.** Ficou só uma foto, a mais fechada nela, em que o logo do Jesus Pod aparece menor e ela é o assunto do quadro. A legenda continua creditando o podcast e a Luzia Costa, que é o que faz a foto valer como credencial de mídia. A segunda foto, o plano aberto do estúdio com o painel inteiro atrás, saiu.
 
-1. Deixar como está, com o nome na legenda. É o mais honesto e é o que está no ar.
-2. Manter só uma das duas fotos, a mais fechada nela, em que o logo aparece menor.
-3. Mover as duas para o link da bio, onde não existe a declaração do FAQ, e deixar a mentoria só com palco e sala cheia.
-
-Preciso saber o que ela prefere. Nomes para conferir: o podcast é **Jesus Pod** e a apresentadora é **Luzia Costa**? Li dos painéis das fotos.
+Duas coisas ainda para conferir com ela: o nome do podcast é **Jesus Pod** e a apresentadora é **Luzia Costa**? Li dos painéis das fotos.

@@ -1188,12 +1188,28 @@ section { padding: clamp(56px, 8vw, 108px) 0; position: relative; overflow: hidd
 .secao-dica { overflow-x: clip; overflow-y: visible; z-index: 2; }
 
 /* Par de fotos (mídia, bastidores) — mesmo acabamento do mosaico */
+/* Foto única do podcast (ficou só uma, a mais fechada nela) */
+.foto-podcast {
+  margin: 2.6rem auto 0; max-width: 560px;
+  position: relative; overflow: hidden;
+  border-radius: var(--r-lg); background: var(--grafite-suave);
+}
+.foto-podcast img {
+  width: 100%; display: block; aspect-ratio: 4 / 3;
+  object-fit: cover; object-position: center 40%;
+}
+
 .duo { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
 @media (max-width: 640px) { .duo { grid-template-columns: 1fr; } }
 .duo figure { margin: 0; position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--grafite-suave); }
 .duo img { width: 100%; display: block; aspect-ratio: 4 / 3; object-fit: cover; transition: transform .7s cubic-bezier(.22,.61,.36,1); }
 .duo figure:hover img { transform: scale(1.04); }
+/* Enquadramento do rosto: valem em qualquer tela.
+   .foco-alto e .foco-meio, mais abaixo, só corrigem o celular. */
+.mosaico img.foco-topo, .duo img.foco-topo { object-position: center 24%; }
+
 .duo figcaption,
+.foto-podcast figcaption,
 .mosaico figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 34px 16px 14px;
