@@ -141,6 +141,38 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   página e empurra o conteúdo, então não é mais cortado. No desktop
   continua balão, e a seção ganhou overflow lateral para ele não ser
   aparado pela borda.
+• PENTE FINO DE LEGIBILIDADE NAS SEIS PALETAS (18/10). A Bárbara viu títulos
+  pretos sobre fundo escuro na Editorial do Livro. Rodei um auditor que mede o
+  contraste de TODO trecho de texto das quatro páginas, nas seis paletas, contra
+  o fundo real dele. Encontrou 76 trechos na Editorial e 72 na Autoridade
+  Noturna. Depois das correções, as duas ficaram no mesmo patamar da paleta
+  atual, e o que sobra na lista são três falsos positivos que também aparecem na
+  paleta que está no ar: o cartão do link da bio (o fundo dele vem de um
+  pseudo-elemento, que o medidor não enxerga), a faixa com foto, e o marca-texto,
+  que é uma tarja na base da linha e não um preenchimento.
+  As causas e o que mudou:
+    1. REGRESSÃO MINHA, do dia anterior. Ao fazer o texto sobre o acento seguir
+       a paleta, eu troquei linhas que juntavam vários seletores numa só regra,
+       do tipo ".bg-escuro h1, .bg-azul h1, .bg-magenta h1". Com isso o fundo
+       escuro passou a herdar a cor pensada para o fundo do acento, e nas paletas
+       de acento claro isso virou preto sobre preto. Eram sete regras assim
+       (títulos, negrito, sublinhado, citação, texto de apoio, ornamento e botão
+       de contorno). Todas foram separadas: superfície escura usa branco,
+       superfície preenchida com o acento usa o token.
+    2. ACENTO COMO TEXTO. O dourado tem contraste 2,35 sobre o off white, muito
+       abaixo do mínimo de 4,5. Entrou o token --acento-leitura, uma versão mais
+       fechada do acento, usada onde ele é TEXTO sobre fundo claro: olho de
+       seção, assinatura, condição da oferta, número do passo, data da política
+       e links. E o --acento-sobre-escuro, o caminho inverso, para o acento como
+       texto sobre fundo escuro.
+    3. MARCA-TEXTO. A tarja usava 55% do acento sobre fundo escuro. Com dourado
+       isso clareia o fundo e apaga a letra branca. Virou o token --grifo-escuro,
+       que cai para 30% nas duas paletas douradas.
+    4. AVATARES, PREÇO DO KINDLE e o cartão em destaque dos 5 movimentos foram
+       corrigidos um a um, porque cada um tem um fundo diferente.
+  Para rodar o auditor de novo depois de qualquer mudança de cor, o critério é
+  simples: nenhum trecho pode ficar abaixo de 4,5, e qualquer lista nova deve
+  bater com a da paleta atual.
 • SELETOR DE PALETA, NO CANTO INFERIOR ESQUERDO. É FERRAMENTA DE DECISÃO,
   NÃO É PARA FICAR NO AR. A Bárbara clica em "Cores", escolhe entre a paleta
   atual e as cinco propostas, e o site inteiro troca na hora. A escolha fica
