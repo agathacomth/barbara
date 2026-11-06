@@ -196,7 +196,10 @@
     else document.documentElement.removeAttribute('data-paleta');
   }
 
-  aplicar(lerEscolha());
+  // Cada página pode nascer numa paleta: <html data-paleta-padrao="noturna">.
+  // A escolha da Bárbara no seletor sempre ganha do padrão da página.
+  var padraoDaPagina = document.documentElement.getAttribute('data-paleta-padrao') || '';
+  aplicar(lerEscolha() || padraoDaPagina);
 
   var caixa = document.createElement('div');
   caixa.className = 'seletor-paleta';
@@ -255,6 +258,6 @@
     if (e.key === 'Escape') abrirFechar(false);
   });
 
-  marcarAtiva(lerEscolha());
+  marcarAtiva(lerEscolha() || padraoDaPagina);
   document.body.appendChild(caixa);
 })();

@@ -4,7 +4,8 @@ SITE BÁRBARA GERMANI · v2 (identidade oficial da marca)
 ARQUIVOS
 --------------------------------------------------------------------
 index.html ....................... Link da bio (página inicial)
-mentoria.html .................... Mentoria Identidade Raiz™
+oratoria.html .................... Oratória de Autoridade (produto atual)
+mentoria-arquivo.html ............ Mentoria Identidade Raiz (FORA DO AR, guardada)
 livro.html ....................... A Origem dos Seus Resultados
 politica-de-privacidade.html ..... Política de Privacidade (LGPD)
 
@@ -141,6 +142,35 @@ O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
   página e empurra o conteúdo, então não é mais cortado. No desktop
   continua balão, e a seção ganhou overflow lateral para ele não ser
   aparado pela borda.
+• ORATÓRIA DE AUTORIDADE ENTROU NO LUGAR DA MENTORIA (06/11).
+  A página nova é oratoria.html, feita a partir do briefing da formação
+  presencial de 14 de novembro em São Francisco. Ela nasce na identidade que
+  o briefing pede, azul-marinho com dourado, através do atributo
+  data-paleta-padrao="noturna" no <html>. Se a Bárbara escolher outra paleta
+  no seletor, a escolha dela continua ganhando: o padrão da página só vale
+  enquanto ninguém escolheu nada.
+  A Mentoria Identidade Raiz saiu do ar e está inteira em
+  mentoria-arquivo.html, com noindex e sem nenhum link apontando para ela.
+  Para trazer de volta: renomeie para mentoria.html, apague o noindex e
+  devolva o cartão dela no index.html.
+  O cartão do link da bio, o rodapé das quatro páginas, o botão do livro e o
+  menu da política foram todos repontados para a oratoria.html.
+• VÍDEOS, PASTA video/. Três vídeos editados a partir dos originais dela:
+  a apresentação da Bárbara (1min01), o depoimento do Felipe Guedes (49s) e
+  o da Paula Regis (25s). Legenda queimada em Montserrat, a fonte da marca.
+  Cada um existe em WebM e em MP4, e o navegador baixa só um dos dois: Chrome
+  e Firefox pegam o WebM, que é mais leve, Safari e iPhone pegam o MP4.
+  Detalhe que vale guardar: o navegador do ambiente onde eu testo não tem
+  codec H.264, então o MP4 sozinho não me deixava PROVAR que o vídeo toca.
+  Com o WebM, o teste roda de verdade: os três abrem, com a duração e o
+  tamanho certos. Foi por isso que entraram os dois formatos.
+  Os componentes novos no style.css são .video-vert (vídeo em pé, 9:16) e
+  .duo-video (o par de depoimentos).
+• O QUE AINDA FALTA PARA A ORATÓRIA IR AO AR está em
+  FALTA-PARA-ORATORIA.md, na raiz: link do checkout do Square, código e
+  validade do cupom de US$ 100, endereço exato, certificado, material,
+  estacionamento, cancelamento e o ID do pixel da Meta. Nada disso foi
+  inventado, e por isso nada disso aparece na página.
 • PENTE FINO DE LEGIBILIDADE NAS SEIS PALETAS (18/10). A Bárbara viu títulos
   pretos sobre fundo escuro na Editorial do Livro. Rodei um auditor que mede o
   contraste de TODO trecho de texto das quatro páginas, nas seis paletas, contra

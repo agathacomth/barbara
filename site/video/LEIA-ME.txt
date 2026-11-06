@@ -1,0 +1,369 @@
+SITE BÁRBARA GERMANI · v2 (identidade oficial da marca)
+====================================================================
+
+ARQUIVOS
+--------------------------------------------------------------------
+index.html ....................... Link da bio (página inicial)
+oratoria.html .................... Oratória de Autoridade (produto atual)
+mentoria-arquivo.html ............ Mentoria Identidade Raiz (FORA DO AR, guardada)
+livro.html ....................... A Origem dos Seus Resultados
+politica-de-privacidade.html ..... Política de Privacidade (LGPD)
+
+assets/style.css ................. Todo o visual do site
+assets/site.js ................... Animação de entrada das seções
+assets/fonts.css + assets/fonts/ . Fontes auto-hospedadas
+assets/elementos.html ............ Sprite dos elementos da marca (referência)
+img/ ............................. Logo, fotos e capa do livro
+
+
+IDENTIDADE VISUAL APLICADA (do Manual de Marca)
+--------------------------------------------------------------------
+Cores: estão no topo do style.css, em :root. Mudar ali muda tudo.
+
+  Off White ............ #E9E8E9   fundos claros, respiro
+  Azul Profundo Noturno  #001F54   fundos densos, títulos
+  Rosa Magenta ......... #6D1330   grifos, botões, pontos emocionais
+                                   (o manual traz #B42150; escurecido em
+                                   dois passos a pedido da Ágatha)
+  Azul Brilhante ....... #0552AC   CTAs secundários, destaques
+
+Tipografia: o manual usa TAN Aegean e Mont, que são fontes pagas e
+não podem ser servidas na web sem licença. Usei as equivalentes livres
+mais próximas, já auto-hospedadas:
+
+  TAN Aegean  →  Playfair Display   (títulos e frases de impacto)
+  Mont        →  Montserrat         (corpo de texto)
+  Cormorant Garamond                (assinatura e logotipo)
+
+  Se a Bárbara tiver a licença web das originais, é só trocar os
+  arquivos em assets/fonts/ e os nomes em assets/fonts.css.
+
+Logo: extraí do manual em duas versões, com fundo transparente:
+  img/logo-bg.png / logo-lockup.png ........ para fundos claros
+  img/logo-bg-claro.png / ...-claro.png .... para fundos escuros
+  img/favicon.png .......................... ícone da aba
+
+Elementos gráficos: os símbolos OFICIAIS (boca, onda sonora, ramo e
+porta) estão em img/simbolo-*.png. Eles entram como máscara CSS, então
+assumem qualquer cor da paleta com uma linha de CSS e aparecem em
+magenta, azul-claro e branco conforme o fundo da seção. Ficam no
+ornamento de cada seção, nos marcadores de lista e na faixa animada.
+
+
+O QUE MUDOU NESTA VERSÃO (retorno da Bárbara)
+--------------------------------------------------------------------
+• A página da mentoria ficou escura. O azul noturno virou a base e as
+  seções que eram off-white viraram grafite (#171C29) e grafite suave
+  (#232936). As classes novas são .bg-escuro--grafite, --noite e --brisa:
+  elas só trocam o tom do fundo, todo o resto do comportamento continua
+  igual ao .bg-escuro. Uma seção ficou clara de propósito, a dos
+  depoimentos, para dar respiro no meio da leitura.
+• O rosa ficou bem mais escuro no site inteiro: --magenta foi de #B42150
+  (o do manual) para #6D1330, e --magenta-claro de #D9648B para #8A2846.
+  Os valores fixos que não vinham do :root (sombras de botão, hover,
+  grifos, cartão da bio) foram ajustados junto. Para voltar ao rosa do
+  manual é só trocar os dois valores no :root e rever esses fixos.
+• A mentoria entrou em TEMA NOITE. O <body> dela tem a classe .tema-noite
+  e o bloco no fim do style.css leva o azul das seções para perto do preto
+  (#020A1C), junto com o topo, o rodapé e a barra de CTA. O gradiente da
+  primeira dobra está em .hero--recorte e é quase preto. O link da bio e a
+  página do livro continuam com o Azul Profundo Noturno do manual.
+• A escala escura desceu junto: --grafite #11151F, --grafite-suave #1A1F2B
+  e --noturno-fundo #01081A.
+• No tema noite o azul brilhante do botão "Quero mudar isso" foi rebaixado:
+  com o magenta tão escuro, ele passou a gritar mais que o CTA principal
+  e invertia a hierarquia da página.
+• CELULAR OTIMIZADO: a página caiu de 21.300px para 13.100px de altura,
+  quase 40% mais curta. Os blocos longos viraram CARROSSEL DE ARRASTAR:
+  cartões do mecanismo, os 5 movimentos, entregáveis, é/não é, depoimentos,
+  os dois mosaicos de fotos, o par do podcast e a linha do tempo. O
+  deslizar é do próprio navegador (scroll-snap em CSS, sem biblioteca
+  nenhuma); o site.js só desenha os pontinhos e a dica "arraste para o
+  lado", e some com ela no primeiro arrasto. Fora do celular tudo volta a
+  ser grade, igual a antes.
+  Para tirar um bloco do carrossel é só remover a classe dele da lista no
+  bloco "CELULAR: blocos longos viram carrossel", no style.css, e da
+  variável SELETOR no site.js.
+  A ficha rápida e as etapas do "como funciona" viraram 2 colunas em vez
+  de carrossel, porque são curtas. O respiro entre seções caiu de 56px
+  para 44px no celular.
+• Rostos cortados no celular: as fotos em pé (palco-2 e traj-palestra,
+  900x1125) perdiam 40% da altura ao entrar na caixa deitada do carrossel,
+  e o corte pelo centro comia a cabeça. Entraram as classes .foco-alto e
+  .foco-meio, que só movem o object-position. Se trocar alguma foto por
+  outra em pé, é só pôr .foco-alto nela.
+• BUG CORRIGIDO na página do livro no celular: a dobra "Sobre o livro"
+  saía da tela e o texto ficava cortado na direita. Causa: um filho de
+  grade com conteúdo largo (a faixa de chips) esticava a coluna, porque
+  item de grade nasce com min-width:auto e não encolhe. Duas correções:
+  .hero__grid > * ganhou min-width:0, e a sanfona do celular passou a
+  valer só para .fluxo--interativo, que é o da mentoria, deixando a faixa
+  decorativa do livro em paz. A foto do livro nessa dobra também estava
+  pequena demais no celular (190px) e foi para 320px.
+• No celular e no tablet o topo da mentoria virou composição lado a lado:
+  a foto fica pequena, à direita do olho e do título, e o texto de apoio e
+  os botões ocupam a largura inteira. Ela só atravessa para a dobra
+  seguinte no desktop; no celular fica inteira dentro do topo, com um
+  esmaecimento curto na base. Tudo está no bloco "Celular: a foto do topo
+  da mentoria fica pequena, ao lado do título", no fim do style.css, com
+  três tamanhos: até 400px, até 899px e de 600px a 899px (tablet).
+• O recorte do topo foi refeito. A borda serrilhava porque o modelo de
+  recorte entrega a máscara em 1024px e ela era ampliada: agora a máscara
+  é suavizada e recontrastada antes de virar alfa. E a base não esmaece
+  mais para transparente (virava uma névoa esbranquiçada sobre o escuro):
+  a imagem fica opaca e um degradê em CSS (.hero__recorte::after) dissolve
+  ela na cor exata da seção de baixo. Se mudar o quanto ela invade a dobra
+  (a margem negativa), mude a altura do degradê no mesmo tanto.
+• Saíram os depoimentos masculinos. Os femininos ganharam foto ou
+  monograma ao lado do nome.
+• Dobra nova de trajetória, com mosaico de fotos, linha do tempo, selos
+  e números, já corrigida com as respostas da Bárbara em 17/09.
+  ATENÇÃO NA FEBRACIS: a frase da etapa "2023 a 2025" foi escrita sem
+  nenhum verbo de trabalho e sem tom de saída, de propósito. Não trocar
+  por "atuei", "trabalhei" ou "fui mentora lá" sem falar com a Bárbara.
+  Está explicado em VALIDAR-COM-A-BARBARA.md.
+  Os nomes dos laboratórios (EMS e Bagó) também saíram, porque ela não
+  soube dizer se podem ser citados. Tudo explicado em
+  VALIDAR-COM-A-BARBARA.md, na raiz desta pasta.
+• Entrou na trajetória: cadeira de imortal na ABRASCI (Academia
+  Brasileira de Ciências, Artes, História e Literatura) e a Medalha de
+  Mérito Profissional. Virou o selo em destaque. O nome e a sigla foram
+  corrigidos em 18/09: eu tinha escrito "ABRACE / Academia Brasileira de
+  Arte, Cultura, História e Literatura", tirado do áudio, e estava errado
+  nos dois. Os currículos da Bárbara e o site da instituição confirmam
+  ABRASCI.
+• O número de anos passou de "+20" para "9 anos com comportamento
+  humano", que é o correto segundo ela.
+• Fotos de palco, sala cheia, turma e bastidor entraram na página. As
+  fotos de roupa preta saíram; no lugar entraram as de terno branco do
+  evento Raiz, que conversam melhor com a identidade.
+• A arquitetura interativa foi refeita. No celular ela deixou de ser um
+  balão flutuante e virou sanfona: o painel abre dentro do fluxo da
+  página e empurra o conteúdo, então não é mais cortado. No desktop
+  continua balão, e a seção ganhou overflow lateral para ele não ser
+  aparado pela borda.
+• ORATÓRIA DE AUTORIDADE ENTROU NO LUGAR DA MENTORIA (06/11).
+  A página nova é oratoria.html, feita a partir do briefing da formação
+  presencial de 14 de novembro em São Francisco. Ela nasce na identidade que
+  o briefing pede, azul-marinho com dourado, através do atributo
+  data-paleta-padrao="noturna" no <html>. Se a Bárbara escolher outra paleta
+  no seletor, a escolha dela continua ganhando: o padrão da página só vale
+  enquanto ninguém escolheu nada.
+  A Mentoria Identidade Raiz saiu do ar e está inteira em
+  mentoria-arquivo.html, com noindex e sem nenhum link apontando para ela.
+  Para trazer de volta: renomeie para mentoria.html, apague o noindex e
+  devolva o cartão dela no index.html.
+  O cartão do link da bio, o rodapé das quatro páginas, o botão do livro e o
+  menu da política foram todos repontados para a oratoria.html.
+• VÍDEOS, PASTA video/. Três vídeos editados a partir dos originais dela:
+  a apresentação da Bárbara (1min01), o depoimento do Felipe Guedes (49s) e
+  o da Paula Regis (25s). Legenda queimada em Montserrat, a fonte da marca.
+  Cada um existe em WebM e em MP4, e o navegador baixa só um dos dois: Chrome
+  e Firefox pegam o WebM, que é mais leve, Safari e iPhone pegam o MP4.
+  Detalhe que vale guardar: o navegador do ambiente onde eu testo não tem
+  codec H.264, então o MP4 sozinho não me deixava PROVAR que o vídeo toca.
+  Com o WebM, o teste roda de verdade: os três abrem, com a duração e o
+  tamanho certos. Foi por isso que entraram os dois formatos.
+  Os componentes novos no style.css são .video-vert (vídeo em pé, 9:16) e
+  .duo-video (o par de depoimentos).
+• PESO DOS VÍDEOS, SEGUNDA RODADA (06/11). O GitHub recusou o envio pelo
+  navegador: ele aceita no máximo 25 MB por arquivo e engasga com lotes
+  grandes. Nenhum arquivo passava de 11 MB, então o que estourou foi o total,
+  40 MB de uma vez. Reencodei os três de 720x960 para 540x960, com
+  compressão mais firme e áudio mono, que é o que faz sentido para fala:
+  de 40 MB para 18 MB, 55% a menos. Na tela os vídeos aparecem com 340 a
+  396 pixels de largura, então 540 ainda é mais do que a tela pede, inclusive
+  em celular retina. Conferi depois do corte: os três abrem, tocam, e com a
+  duração certa.
+  Se o GitHub reclamar de novo, suba em duas levas: primeiro tudo menos a
+  pasta video, depois a pasta video sozinha.
+• O QUE AINDA FALTA PARA A ORATÓRIA IR AO AR está em
+  FALTA-PARA-ORATORIA.md, na raiz: link do checkout do Square, código e
+  validade do cupom de US$ 100, endereço exato, certificado, material,
+  estacionamento, cancelamento e o ID do pixel da Meta. Nada disso foi
+  inventado, e por isso nada disso aparece na página.
+• PENTE FINO DE LEGIBILIDADE NAS SEIS PALETAS (18/10). A Bárbara viu títulos
+  pretos sobre fundo escuro na Editorial do Livro. Rodei um auditor que mede o
+  contraste de TODO trecho de texto das quatro páginas, nas seis paletas, contra
+  o fundo real dele. Encontrou 76 trechos na Editorial e 72 na Autoridade
+  Noturna. Depois das correções, as duas ficaram no mesmo patamar da paleta
+  atual, e o que sobra na lista são três falsos positivos que também aparecem na
+  paleta que está no ar: o cartão do link da bio (o fundo dele vem de um
+  pseudo-elemento, que o medidor não enxerga), a faixa com foto, e o marca-texto,
+  que é uma tarja na base da linha e não um preenchimento.
+  As causas e o que mudou:
+    1. REGRESSÃO MINHA, do dia anterior. Ao fazer o texto sobre o acento seguir
+       a paleta, eu troquei linhas que juntavam vários seletores numa só regra,
+       do tipo ".bg-escuro h1, .bg-azul h1, .bg-magenta h1". Com isso o fundo
+       escuro passou a herdar a cor pensada para o fundo do acento, e nas paletas
+       de acento claro isso virou preto sobre preto. Eram sete regras assim
+       (títulos, negrito, sublinhado, citação, texto de apoio, ornamento e botão
+       de contorno). Todas foram separadas: superfície escura usa branco,
+       superfície preenchida com o acento usa o token.
+    2. ACENTO COMO TEXTO. O dourado tem contraste 2,35 sobre o off white, muito
+       abaixo do mínimo de 4,5. Entrou o token --acento-leitura, uma versão mais
+       fechada do acento, usada onde ele é TEXTO sobre fundo claro: olho de
+       seção, assinatura, condição da oferta, número do passo, data da política
+       e links. E o --acento-sobre-escuro, o caminho inverso, para o acento como
+       texto sobre fundo escuro.
+    3. MARCA-TEXTO. A tarja usava 55% do acento sobre fundo escuro. Com dourado
+       isso clareia o fundo e apaga a letra branca. Virou o token --grifo-escuro,
+       que cai para 30% nas duas paletas douradas.
+    4. AVATARES, PREÇO DO KINDLE e o cartão em destaque dos 5 movimentos foram
+       corrigidos um a um, porque cada um tem um fundo diferente.
+  Para rodar o auditor de novo depois de qualquer mudança de cor, o critério é
+  simples: nenhum trecho pode ficar abaixo de 4,5, e qualquer lista nova deve
+  bater com a da paleta atual.
+• SELETOR DE PALETA, NO CANTO INFERIOR ESQUERDO. É FERRAMENTA DE DECISÃO,
+  NÃO É PARA FICAR NO AR. A Bárbara clica em "Cores", escolhe entre a paleta
+  atual e as cinco propostas, e o site inteiro troca na hora. A escolha fica
+  guardada no navegador dela, então vale ao navegar entre as quatro páginas.
+  Como funciona: toda cor do site virou variável no :root do style.css, e cada
+  paleta é um bloco html[data-paleta="..."] que troca essas variáveis. Foram
+  convertidos 140 valores de cor que antes estavam fixos no meio das regras.
+  PARA REMOVER, depois que ela escolher:
+    1. no site.js, apague o bloco 3 inteiro (começa em "SELETOR DE PALETA");
+    2. no style.css, copie as linhas da paleta escolhida para dentro do :root,
+       por cima dos valores que estiverem lá;
+    3. apague os blocos "PALETAS ALTERNATIVAS" e ".seletor-paleta".
+  Está explicado também em comentário no topo dos dois blocos.
+  O seletor troca as CORES, não a arquitetura: a proporção de claro e escuro
+  da página continua a mesma, porque isso é estrutura, não cor.
+  CONTRASTE: as paletas douradas (1 e 4) quebravam a leitura, porque o texto
+  dos botões era branco fixo e sumia no dourado (contraste 1,92, o mínimo
+  aceitável é 4,5). Entrou o token --acento-texto, que fica escuro nessas duas
+  paletas. Medi as seis paletas em sete pontos críticos da página e todas
+  passam agora, com folga.
+• FOTOS NOVAS DA BÁRBARA, de estúdio, de terno branco. Entraram no topo da bio,
+  no "quem sou eu", no "quem conduz", nos três cartões do link da bio e na
+  imagem de compartilhamento. As fotos de evento (palco, sala cheia, turma,
+  abraço, podcast) continuam as mesmas, porque foram elas que a Bárbara pediu
+  para mostrar movimento. As duas fotos de roupa preta do envio ficaram de
+  fora, pela mesma razão que tiramos as outras em setembro.
+• PRIMEIRA DOBRA DA MENTORIA, ENXUTA. Saiu a foto recortada e saiu o botão
+  "Conhecer o método". Ficaram o olho, o título, a frase de apoio e um botão
+  só, "Quero minha vaga", em coluna única centralizada. No celular o botão
+  ocupa a largura inteira. O recorte continua em img/barbara-recorte.webp e
+  as regras .hero--recorte seguem no style.css, inativas, caso ela queira a
+  foto de volta: basta trocar a classe .hero--limpo por .hero--recorte e
+  devolver a coluna da imagem.
+• OS CARROSSÉIS DO CELULAR PASSAM SOZINHOS. O arrasto com o dedo continua
+  igual: quem quiser conduzir, conduz. O que entrou foi uma passagem
+  automática, só para mostrar que tem mais coisa para o lado, com quatro
+  travas para não virar incômodo:
+    1. só anda enquanto o bloco está na tela (mais da metade dele visível);
+    2. para DE VEZ no primeiro toque, arrasto, roda do mouse ou tecla, e não
+       volta a andar naquele bloco;
+    3. faz uma ida até o último cartão e uma volta até o primeiro, e para ali.
+       Termina onde começou, então ninguém fica preso num cartão do meio;
+    4. não anda para quem pediu menos movimento nas preferências do celular.
+  O tempo em cada cartão é de 4 segundos: está na constante INTERVALO, no
+  começo do bloco 2 do site.js. Para desligar de vez, é só apagar o trecho
+  do IntersectionObserver no fim da função montar().
+  Detalhe: a dica "arraste para o lado" agora some só depois do arrasto DA
+  PESSOA. Antes ela sumia em qualquer rolagem, e com o movimento automático
+  a única instrução da tela desapareceria sozinha no primeiro passo.
+  Vale nas duas páginas que têm carrossel, a da mentoria e a do livro.
+• A PÁGINA DO LIVRO ENTROU NO TEMA NOITE. O <body> dela ganhou a classe
+  .tema-noite, igual à mentoria, e o gradiente institucional passou a ter
+  uma versão escura (.tema-noite .bg-gradiente), na mesma direção e nos
+  mesmos pontos de parada do manual, só que na escala escura. Resultado:
+  o topo, a dobra "Sobre o livro", o cabeçalho, o rodapé e a barra de CTA
+  ficaram exatamente no mesmo azul da mentoria. As dobras claras
+  (bg-claro e bg-papel) continuam claras, que é o que dá respiro à
+  leitura da carta e dos depoimentos. O theme-color da aba também desceu.
+  O LINK DA BIO (index.html) continua no Azul Profundo Noturno do manual,
+  #001F54. Ele tem estrutura própria (.bio), não usa .bg-gradiente nem
+  .bg-escuro, então precisa de regras separadas. Diga se quer que ele
+  acompanhe também.
+• A DOBRA DO PREÇO SUBIU. Antes ela ficava depois da trajetória, a 79%
+  da página. Agora entra logo após os depoimentos, a 56%, e a
+  apresentação da Bárbara e a trajetória vêm depois dela. A lógica: a
+  pessoa chega no preço já convencida pela prova social, e a autoridade
+  passa a responder "vale o quanto custa" em vez de ser só currículo.
+  Como o preço agora fica acima da trajetória, entrou uma faixa curta de
+  CTA entre a trajetória e o FAQ, para quem se convence no fim não ter
+  que rolar a página de volta.
+• Saiu a marca d'água "™" da dobra "O que você recebe". No tamanho em
+  que ela era desenhada, o símbolo virava duas letras soltas, "TM", e
+  lia-se como erro. As outras três marcas d'água são palavras e número.
+• ROSTOS CORTADOS, SEGUNDA RODADA. A foto "Conduzindo" estava cortada no
+  arquivo original, não no CSS: o recorte que eu tinha feito já entrava
+  sem a cabeça dela. Refiz o corte a partir da DSC_8826, agora com a
+  cabeça inteira e folga em cima, e a foto do abraço ("O que fica")
+  também foi refeita a partir da DSC_9065 pelo mesmo motivo. Depois
+  disso conferi uma a uma as seis fotos dos dois mosaicos, no celular e
+  no computador, olhando cada slide, em vez de confiar na conta de
+  proporção. A classe .foco-topo é nova e vale em qualquer tela, porque
+  .foco-alto e .foco-meio só existem dentro do bloco do celular.
+• Ficou só UMA foto do podcast, a mais fechada nela. O bloco virou
+  .foto-podcast, uma figura única centralizada, no lugar do par .duo.
+• Saíram TODOS os travessões das quatro páginas e deste arquivo. No
+  lugar entraram dois-pontos, vírgula ou o ponto médio (·) nos títulos.
+• A frase que abre a linha do tempo foi reescrita. A anterior dizia que
+  cada etapa "deixou alguma coisa no método", o que não explica nada.
+  Agora ela nomeia o que veio de cada lugar: o teatro, o corporativo e
+  a mentoria.
+• O aviso de que a mentoria não substitui terapia ficou só no FAQ. Saiu
+  da lista "não é para você se" e foi encurtado no rodapé.
+
+
+AS 2 COISAS QUE PRECISAM SER PREENCHIDAS
+--------------------------------------------------------------------
+
+1) LINK DO CHECKOUT DA MENTORIA
+   Arquivo: mentoria.html, no começo, procure por CHECKOUT_URL.
+
+       var CHECKOUT_URL = "";
+
+   Cole a URL entre as aspas. Os 6 botões de inscrição da página
+   passam a apontar para lá. Enquanto estiver vazio, eles abrem o
+   WhatsApp da Bárbara com uma mensagem pronta, nenhum botão morto.
+
+2) VÍDEO DE APRESENTAÇÃO DA MENTORIA
+   Arquivo: mentoria.html, procure por "ESPAÇO DO VÍDEO".
+   Troque a <div class="video-caixa"> pelo iframe do YouTube/Vimeo.
+   Ele já está dentro do mockup de notebook.
+
+
+O QUE JÁ ESTÁ FUNCIONANDO
+--------------------------------------------------------------------
+✓ WhatsApp +1 (754) 201-8654 com mensagens diferentes por contexto
+✓ Link da Amazon do livro + capa oficial
+✓ Instagram, LinkedIn e a entrevista d'A Gazeta Popular
+✓ Botão de compartilhar o livro no WhatsApp (com aviso do navegador)
+✓ Depoimentos reais transcritos das conversas
+✓ GIF oficial do livro girando no topo da livro.html, feito a partir
+  do seu "gir capa do livro.gif", reduzido de 9,2 MB para 851 KB
+  (520px, 16 fps). O fundo é transparente: o livro gira solto sobre a
+  seção, sem moldura e sem caixa cinza atrás
+✓ Foto recortada no topo da mentoria: img/barbara-recorte.webp, fundo
+  removido, a base atravessa para a dobra da ficha rápida. A sombra e o
+  halo são de CSS (.hero__recorte no style.css), então dá para ajustar a
+  profundidade sem mexer na imagem. O arquivo é .webp por causa da
+  transparência com qualidade de foto (o PNG equivalente pesaria 1,4 MB
+  contra 138 KB), formato aberto, roda em todos os navegadores atuais
+✓ Fotos novas da Bárbara aplicadas em todo o site (hero, cartões da bio,
+  "quem sou eu", hero da mentoria, "quem conduz" e imagem de
+  compartilhamento). Continuam as originais só a foto de fundo da faixa
+  "Você sabe racionalmente..." e a do encontro na dobra da plataforma
+✓ Arquitetura interativa na mentoria: passe o mouse (ou toque) em
+  Identidade, Crenças, Padrões, Escolhas, Comportamentos e Resultados
+  e aparece o movimento do método que trabalha cada etapa
+✓ Responsivo, acessível e pronto para impressão
+✓ Open Graph configurado para link no WhatsApp e Instagram
+
+
+COMO PUBLICAR
+--------------------------------------------------------------------
+É um site estático: suba a pasta inteira, do jeito que está.
+  • Netlify -> netlify.com/drop (arraste a pasta)
+  • Vercel, GitHub Pages, ou qualquer hospedagem via FTP
+A index.html é que abre no domínio principal.
+Para testar no computador, dois cliques em index.html.
+
+Sem dependências externas: nenhuma chamada a CDN ou Google Fonts.
+O site funciona até offline.
+
+--------------------------------------------------------------------
+Feito por AG Studio · setembro de 2026

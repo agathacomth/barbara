@@ -1661,3 +1661,41 @@ html[data-paleta="bordo"] {
   .hero--limpo h1 { font-size: clamp(2.1rem, 8.6vw, 2.9rem); }
   .hero--limpo .cta-linha .btn { width: 100%; justify-content: center; }
 }
+
+/* ==========================================================================
+   ORATÓRIA DE AUTORIDADE
+   Vídeo em pé (9:16), que é o formato em que a Bárbara grava, e o par de
+   depoimentos. Só o que a página nova pediu; nada aqui mexe no resto.
+   ========================================================================== */
+.video-vert {
+  margin: 0 auto; max-width: 340px; position: relative;
+  border-radius: var(--r-lg); overflow: hidden;
+  background: var(--grafite-suave);
+  box-shadow: 0 34px 70px -28px rgba(0,0,0,.8), 0 0 0 1px rgba(var(--rgb-neutro),.18);
+}
+.video-vert video { width: 100%; aspect-ratio: 9 / 16; display: block; background: #000; }
+
+.duo-video { display: grid; gap: 28px; grid-template-columns: 1fr 1fr; max-width: 820px; margin-inline: auto; }
+@media (max-width: 720px) { .duo-video { grid-template-columns: 1fr; gap: 34px; } }
+.duo-video figure {
+  margin: 0; border-radius: var(--r-lg); overflow: hidden;
+  background: var(--grafite-suave);
+  box-shadow: 0 26px 56px -26px rgba(0,0,0,.75), 0 0 0 1px rgba(var(--rgb-neutro),.16);
+}
+.duo-video video { width: 100%; aspect-ratio: 9 / 16; display: block; background: #000; }
+.duo-video figcaption { padding: 16px 18px 18px; }
+.duo-video figcaption b { display: block; color: #fff; font-size: .95rem; font-weight: 500; }
+.duo-video figcaption span {
+  display: block; margin-top: 3px; font-size: .72rem; line-height: 1.5;
+  color: rgba(var(--rgb-claro),.6);
+}
+
+/* Ícone da ficha rápida: na mentoria são os símbolos da marca, aqui são
+   local, data e hora, que o briefing pede em destaque. */
+.ficha__ico { width: 26px; height: 26px; display: block; margin: 0 auto 10px; color: var(--azul-claro); }
+.bg-escuro .ficha__ico { color: var(--azul-claro); }
+
+/* Lista em duas colunas do "para quem é" */
+@media (max-width: 640px) {
+  .lista-check[style*="columns"] { columns: 1 !important; }
+}
